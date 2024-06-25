@@ -13,6 +13,13 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+# Argon设置
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
+rm -rf ../../customfeeds/luci/themes/luci-theme-argon
+rm -rf ../../customfeeds/luci/themes/luci-theme-argon-mod
+rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
